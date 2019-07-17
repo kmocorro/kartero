@@ -1,0 +1,26 @@
+{
+  "name": "kartero",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "micro -l tcp://localhost:3003"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmocorro/kartero.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmocorro/kartero/issues"
+  },
+  "homepage": "https://github.com/kmocorro/kartero#readme",
+  "description": "",
+  "dependencies": {
+    "micro": "^9.3.4",
+    "nodemailer": "^6.3.0",
+    "urlencoded-body-parser": "^3.0.0"
+  }
+}
