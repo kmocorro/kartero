@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "micro -l tcp://localhost:3003"
+    "start": "micro -l tcp://0.0.0.0:${PORT-3003}"
   },
   "keywords": [],
   "author": "",

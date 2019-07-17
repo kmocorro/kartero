@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     console.log(js);
 
     const mailSetup = {
-        from: "Kartero <f4automailer@sunpowercorp.com>",
+        from: "Automailer <f4automailer@sunpowercorp.com>",
         to: js.recipient_email,
         subject: js.subject,
         html: 'I am your new Mailman, Meet Kartero.'
@@ -19,5 +19,6 @@ module.exports = async (req, res) => {
         if(err){ return err; }
         
         console.log(info);
+        res.end('Successfully sent.');
     })
 }
