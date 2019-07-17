@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
 
     const mailSetup = {
         from: "Automailer <f4automailer@sunpowercorp.com>",
-        to: js.recipient_email,
+        to: [js.recipient_email],
         subject: js.subject,
         html: 'I am your new Mailman, Meet Kartero.'
     }
