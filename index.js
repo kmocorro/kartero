@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         from: "Kartero <f4automailer@sunpowercorp.com>",
         to: js.recipient_email,
         subject: js.subject,
-        html: 'I am your new Mailman, Meet Kartero.'
+        text: 'I am your new Mailman, Meet Kartero.'
     }
 
     transporter.sendMail(mailSetup, (err, info) => {
