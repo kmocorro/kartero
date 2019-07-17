@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     console.log(js);
 
     const mailSetup = {
-        from: "Kartero <f4automailer@sunpowercorp.com>",
+        from:  js.sender + " <f4automailer@sunpowercorp.com>",
         to: js.recipient_email,
         subject: js.subject,
         text: js.message,
