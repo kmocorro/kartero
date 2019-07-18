@@ -9,13 +9,13 @@ module.exports = async (req, res) => {
 
     /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
     const mailSetup = {
-        from:  js.sender,
+        from:  js.sender + '<Automailer>',
         to: js.recipient_email,
         subject: js.subject,
         text: js.message,
         attachments: { filename: js.filename, path: filePath }
     }
-    
+
     transporter.sendMail(mailSetup, (err, info) => {
         if(err){ return res.end(err + ' error sending email.') }
         res.end('Successfully sent to ' + info.accepted);
