@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
 
     /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
     const mailSetup = {
-        from:  js.sender + '<Automailer>',
+        from:  js.sender + ' <f4automailer@sunpowercorp.com>',
         to: js.recipient_email,
         subject: js.subject,
         text: js.message,
