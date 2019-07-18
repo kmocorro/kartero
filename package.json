@@ -20,7 +20,6 @@
   "description": "",
   "dependencies": {
     "micro": "^9.3.4",
-    "nodemailer": "^6.3.0",
-    "urlencoded-body-parser": "^3.0.0"
+    "nodemailer": "^6.3.0"
   }
 }
