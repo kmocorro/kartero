@@ -5,7 +5,7 @@ const config = require('./config').config;
 module.exports = async (req, res) => {
     const js = await (json(req));
     const transporter = nodemailer.createTransport(config.mail);
-    const filePath = './static/' + js.filename 
+    const filePath = './static/' + js.filename || "",
 
     /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
     const mailSetup = {
