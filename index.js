@@ -7,24 +7,7 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport(config.mail);
     const filePath = './static/' + js.filename 
 
-    if(!filePath){
-
-        /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
-        const mailSetup = {
-            from:  js.sender + ' <f4automailer@sunpowercorp.com>',
-            to: js.recipient_email,
-            subject: js.subject,
-            text: js.message,
-        }
-
-        transporter.sendMail(mailSetup, (err, info) => {
-            if(err){ return res.end(err + ' error sending email.') }
-            res.end('Successfully sent to ' + info.accepted);
-        })
-    
-
-    } else {
-
+    if(js.filename){
         /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
         const mailSetup = {
             from:  js.sender + ' <f4automailer@sunpowercorp.com>',
@@ -38,5 +21,21 @@ module.exports = async (req, res) => {
             if(err){ return res.end(err + ' error sending email.') }
             res.end('Successfully sent to ' + info.accepted);
         })
+
+    } else {
+        /** In order to attach file in email, ssh through the server, move the file you want to attach to "~App/kartero/static/" and use its filename in curl or POST request. */
+        const mailSetup = {
+            from:  js.sender + ' <f4automailer@sunpowercorp.com>',
+            to: js.recipient_email,
+            subject: js.subject,
+            text: js.message,
+        }
+
+        transporter.sendMail(mailSetup, (err, info) => {
+            if(err){ return res.end(err + ' error sending email.') }
+            res.end('Successfully sent to ' + info.accepted);
+        })
     }
+
+    
 }
